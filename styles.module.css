@@ -14,13 +14,33 @@
   border: 0;
   padding: 10px 14px;
   border-radius: 8px;
+  font-weight: 700;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 .input {
   padding: 10px;
 }
 
-.flex {
+.todoList {
+  padding: 0;
+  margin: 0;
+}
+
+.todoInput {
   display: flex;
   gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.todo {
+  display: flex;
+  max-width: 250px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 5px 10px;
+  align-items: center;
 }

@@ -26,14 +26,29 @@ export default function TodoList() {
 
   }
 
+  const removeTodo = function (todoId, e) {
+    e.preventDefault();
+
+    updateTodos(todos => todos.filter(todo => todo.id !== todoId));
+  }
+
   const renderTodos = todos =>
     todos.length ?
       todos.map(todo =>
         <li
-          className="todo"
+          className={styles.todo}
           key={todo.id}
+
         >
           {todo.todo}
+          <button
+            type="button"
+            onClick={e => removeTodo(todo.id, e)}
+            className={styles.button}
+          >
+            x
+          </button>
+
         </li>)
       :
       'No todo\'s yet..';
@@ -41,7 +56,7 @@ export default function TodoList() {
 
   return (
     <form method="post" onSubmit={e => handleSubmit(e)}>
-      <div className={styles.flex}>
+      <div className={styles.todoInput}>
         <input
           type="text"
           placeholder="Add a todo"
@@ -58,7 +73,7 @@ export default function TodoList() {
         />
       </div>
 
-      <ul className="todos">
+      <ul className={styles.todoList}>
         {renderTodos(todos)}
       </ul>
     </form>
