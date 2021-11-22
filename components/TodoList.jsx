@@ -4,37 +4,39 @@ import { v4 as uuid } from 'uuid';
 
 export default function TodoList() {
   const [todos, updateTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState('');
 
   const textInput = useRef(null);
 
   const handleSubmit = function (e) {
-    console.log('e', e);
     e.preventDefault();
-
 
     updateTodos(
       todos => [
         ...todos,
         {
-          todo: e.target[0].value,
+          todo: newTodo,
           id: uuid()
         }
       ]
     );
 
-    textInput.current.value = null;
+    // reset input
+    setNewTodo(newTodo => '');
+
   }
 
-  const renderTodos = todos => todos.length ?
-    todos.map(todo =>
-      <li
-        className="todo"
-        key={todo.id}
-      >
-        {todo.todo}
-      </li>)
-    :
-    'No todo\'s yet..';
+  const renderTodos = todos =>
+    todos.length ?
+      todos.map(todo =>
+        <li
+          className="todo"
+          key={todo.id}
+        >
+          {todo.todo}
+        </li>)
+      :
+      'No todo\'s yet..';
 
 
   return (
@@ -43,7 +45,9 @@ export default function TodoList() {
         type="text"
         placeholder="Add a todo"
         className={styles.input}
+        value={newTodo}
         ref={textInput}
+        onChange={e => setNewTodo(e.currentTarget.value)}
       />
 
       <input
