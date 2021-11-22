@@ -1,11 +1,16 @@
 import Link from 'next/link';
+import styles from '../styles.module.css';
+import TodoList from '../components/TodoList';
+
 
 export default function Todo() {
   return (
     <div>
-      <h1>A todo list in next 🗒️</h1>
-
       <Link href="/">Home</Link>
+      <h1>🗒️ A todo list in next</h1>
+
+      <TodoList />
+
     </div>
   )
 }

@@ -1,0 +1,21 @@
+.heading {
+  font-family: 'Helvetica', sans-serif;
+  color: #283747;
+}
+
+.link {
+  color: white;
+}
+
+.button {
+  background: #FF5733;
+  appearance: none;
+  color: white;
+  border: 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.input {
+  padding: 10px;
+}
