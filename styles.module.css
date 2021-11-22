@@ -1,6 +1,6 @@
 .heading {
   font-family: 'Helvetica', sans-serif;
-  color: #283747;
+  color: #FFF;
 }
 
 .link {
@@ -8,14 +8,19 @@
 }
 
 .button {
-  background: #FF5733;
+  background: #48C9B0;
   appearance: none;
   color: white;
   border: 0;
-  padding: 10px;
+  padding: 10px 14px;
   border-radius: 8px;
 }
 
 .input {
   padding: 10px;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
 }

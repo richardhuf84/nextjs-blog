@@ -7,7 +7,7 @@ export default function Todo() {
   return (
     <div>
       <Link href="/">Home</Link>
-      <h1>🗒️ A todo list in next</h1>
+      <h1 className={styles.heading}>🗒️ A todo list in next</h1>
 
       <TodoList />
 

@@ -41,20 +41,22 @@ export default function TodoList() {
 
   return (
     <form method="post" onSubmit={e => handleSubmit(e)}>
-      <input
-        type="text"
-        placeholder="Add a todo"
-        className={styles.input}
-        value={newTodo}
-        ref={textInput}
-        onChange={e => setNewTodo(e.currentTarget.value)}
-      />
+      <div className={styles.flex}>
+        <input
+          type="text"
+          placeholder="Add a todo"
+          className={styles.input}
+          value={newTodo}
+          ref={textInput}
+          onChange={e => setNewTodo(e.currentTarget.value)}
+        />
 
-      <input
-        type="submit"
-        value="Add"
-        className={styles.button}
-      />
+        <input
+          type="submit"
+          value="Add"
+          className={styles.button}
+        />
+      </div>
 
       <ul className="todos">
         {renderTodos(todos)}
