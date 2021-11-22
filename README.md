@@ -1,1 +1,4 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Experimenting with Next.js
+
+[View](https://next-demo.richardhuf.com.au)
+
