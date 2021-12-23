@@ -40,12 +40,13 @@ export default function TodoList() {
 
         >
           {todo.todo}
-          <button
+          <Button
             type="button"
+            variant="secondary"
             onClick={e => removeTodo(todo.id, e)}
           >
             x
-          </button>
+          </Button>
 
         </li>)
       :
