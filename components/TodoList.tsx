@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
-import styles from '../styles.module.css';
 import { v4 as uuid } from 'uuid';
+import Button from './Button';
 
 export default function TodoList() {
   const [todos, updateTodos] = useState([]);
@@ -36,7 +36,6 @@ export default function TodoList() {
     todos.length ?
       todos.map(todo =>
         <li
-          className={styles.todo}
           key={todo.id}
 
         >
@@ -44,7 +43,6 @@ export default function TodoList() {
           <button
             type="button"
             onClick={e => removeTodo(todo.id, e)}
-            className={styles.button}
           >
             x
           </button>
@@ -56,24 +54,23 @@ export default function TodoList() {
 
   return (
     <form method="post" onSubmit={e => handleSubmit(e)}>
-      <div className={styles.todoInput}>
-        <input
-          type="text"
-          placeholder="Add a todo"
-          className={styles.input}
-          value={newTodo}
-          ref={textInput}
-          onChange={e => setNewTodo(e.currentTarget.value)}
-        />
+      <input
+        type="text"
+        placeholder="Add a todo"
+        value={newTodo}
+        ref={textInput}
+        onChange={e => setNewTodo(e.currentTarget.value)}
+      />
 
-        <input
-          type="submit"
-          value="Add"
-          className={styles.button}
-        />
-      </div>
+      <Button
+        type="submit"
+        variant="primary"
+      >
+        Add
+      </Button>
 
-      <ul className={styles.todoList}>
+      <ul
+      >
         {renderTodos(todos)}
       </ul>
     </form>

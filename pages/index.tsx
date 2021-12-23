@@ -1,15 +1,18 @@
 import Head from 'next/head'
 import Link from 'next/link';
-import styles from '../styles.module.css';
+import Card from "../components/Card";
 
 export default function Home() {
   return (
     <main>
       <Link href="/todo">Todo list</Link>
-      <h1 className={styles.heading}>
-        🚀 Next JS Fun
+      <Card>
+        <h1>
+          🚀 Next JS Fun
+        </h1>
+        <p>Next JS stuff... 😋</p>
 
-      </h1>
+      </Card>
     </main>
   )
 }
