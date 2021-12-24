@@ -1,26 +1,27 @@
+const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
+space.small = space[2];
+space.medium = space[3];
+space.large = space[4];
+
+const colors = {
+  black: '#000',
+  white: '#fff',
+  teal: '#48C9B0',
+  navy: '#283747',
+}
+colors.primary = colors.teal;
+colors.secondary = colors.navy;
+colors.onPrimary = colors.white;
+colors.onSecondary = colors.white;
+
+const fontSizes = [12, 14, 16, 20, 24, 32, 40];
+fontSizes.body = fontSizes[2];
+fontSizes.display = fontSizes[5];
+
 const theme = {
-  colors: {
-    black: '#000',
-    white: '#fff',
-    teal: '#48C9B0',
-    navy: '#283747',
-  },
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fontSizes: [12, 14, 16, 20, 24, 32, 40]
+  colors,
+  fontSizes,
+  space,
 };
-
-// TODO Is there a better way to do this?
-
-theme.colors.primary = theme.colors.teal;
-theme.colors.secondary = theme.colors.navy;
-theme.colors.onPrimary = theme.colors.white;
-theme.colors.onSecondary = theme.colors.white;
-
-theme.space.small = theme.space[2];
-theme.space.medium = theme.space[3];
-theme.space.large = theme.space[4];
-
-theme.fontSizes.body = theme.fontSizes[2];
-theme.fontSizes.display = theme.fontSizes[5];
 
 export default theme;
