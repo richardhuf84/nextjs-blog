@@ -18,10 +18,19 @@ const fontSizes = [12, 14, 16, 20, 24, 32, 40];
 fontSizes.body = fontSizes[2];
 fontSizes.display = fontSizes[5];
 
+const radii = [2, 4, 8];
+radii.small = radii[0];
+radii.medium = radii[1];
+radii.large = radii[2];
+
+console.log('radii', radii);
+
 const theme = {
   colors,
   fontSizes,
+  radii,
   space,
+  fontFamily: 'Sans-Serif'
 };
 
 export default theme;

@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 import Button from './Button';
+import TextInput from './TextInput';
 
 export default function TodoList() {
   const [todos, updateTodos] = useState([]);
@@ -55,7 +56,7 @@ export default function TodoList() {
 
   return (
     <form method="post" onSubmit={e => handleSubmit(e)}>
-      <input
+      <TextInput
         type="text"
         placeholder="Add a todo"
         value={newTodo}

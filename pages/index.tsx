@@ -5,7 +5,7 @@ import Box from '../components/Box';
 
 export default function Home() {
   return (
-    <Box as="main" p={4} fontFamily="" bg="secondary" border={2} borderColor="black">
+    <Box as="main" p={4}>
       <Link href="/todo">Todo list</Link>
       <Card>
         <h1>
