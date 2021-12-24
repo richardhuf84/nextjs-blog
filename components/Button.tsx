@@ -1,26 +1,22 @@
 import styled from 'styled-components';
 import { border, color, space, layout, typography, variant } from 'styled-system';
 
-// const Button = styled.button`
-//   ${color}
-//   ${space}
-//   ${layout}
-//   ${typography}
-//   ${border}
-//   appearance: none;
-//   border: 0;
-// `;
-
 const Button = styled('button')(
   {
     appearance: 'none',
     border: 0,
     fontFamily: 'Sans-serif',
+    borderRadius: 4
   },
+  color,
+  space,
+  layout,
+  typography,
+  border,
   variant({
     variants: {
       primary: {
-        p: 'small',
+        p: ['small', 'medium'],
         bg: 'primary',
         color: 'onPrimary',
         fontSize: 'body'
