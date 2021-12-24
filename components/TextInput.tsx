@@ -1,19 +1,19 @@
 import styled from 'styled-components';
-import { borders, colors, layout } from 'styled-system';
+import { borders, colors, layout, space } from 'styled-system';
 
 const
   TextInput = styled('input')(
     {
-      padding: 16,
-      borderSize: 2,
-      borderColor: 'black',
-      height: 12,
+      border: 0,
+      borderRadius: 4,
       display: 'inline-block',
-      marginRight: 16
+      height: 16,
+      padding: 16,
     },
     borders,
     colors,
-    layout
+    layout,
+    space
   );
 
 export default TextInput;

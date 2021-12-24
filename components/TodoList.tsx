@@ -1,16 +1,16 @@
 import { useState, useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 import Button from './Button';
+import Box from './Box';
 import TextInput from './TextInput';
 
 export default function TodoList() {
   const [todos, updateTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
-
   const textInput = useRef(null);
 
-  const handleSubmit = function (e) {
-    e.preventDefault();
+  const handleSubmit = function (event) {
+    event.preventDefault();
 
     updateTodos(
       todos => [
@@ -36,20 +36,28 @@ export default function TodoList() {
   const renderTodos = todos =>
     todos.length ?
       todos.map(todo =>
-        <li
+        <Box
+          as="li"
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          mb={2}
+          width="50vw"
           key={todo.id}
 
         >
           {todo.todo}
           <Button
             type="button"
-            variant="secondary"
+            variant="primary"
+            ml={2}
             onClick={e => removeTodo(todo.id, e)}
+
           >
             x
           </Button>
 
-        </li>)
+        </Box>)
       :
       'No todo\'s yet..';
 
@@ -62,6 +70,7 @@ export default function TodoList() {
         value={newTodo}
         ref={textInput}
         onChange={e => setNewTodo(e.currentTarget.value)}
+        mr={2}
       />
 
       <Button

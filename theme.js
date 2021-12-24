@@ -23,9 +23,15 @@ radii.small = radii[0];
 radii.medium = radii[1];
 radii.large = radii[2];
 
-console.log('radii', radii);
+const breakpoints = ['40em', '52em', '64em', '80em']
+
+breakpoints.sm = breakpoints[0]
+breakpoints.md = breakpoints[1]
+breakpoints.lg = breakpoints[2]
+breakpoints.xl = breakpoints[3]
 
 const theme = {
+  breakpoints,
   colors,
   fontSizes,
   radii,

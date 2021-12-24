@@ -16,7 +16,7 @@ const Button = styled('button')(
   variant({
     variants: {
       primary: {
-        p: 'medium',
+        p: ['small', 'medium'],
         bg: 'primary',
         color: 'onPrimary',
         fontSize: 'body'
